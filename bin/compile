@@ -336,13 +336,13 @@ mtime "collectstatic.time" "${start}"
 # Progamatically create .profile.d script for application runtime environment variables.
 
 # Set the PATH to include Python / pip / pipenv / etc.
-set_env PATH "\$HOME/.heroku/python/bin:\$PATH"
+set_env PATH "\$HOME/.heroku/python/bin:/app/.root/usr/lib:/app/.root/usr/lib/R:\$PATH"
 # Tell Python to run in unbuffered mode.
 set_env PYTHONUNBUFFERED true
 # Tell Python where it lives.
 set_env PYTHONHOME "\$HOME/.heroku/python"
 # Set variables for C libraries.
-set_env LIBRARY_PATH "\$HOME/.heroku/vendor/lib:\$HOME/.heroku/python/lib:\$LIBRARY_PATH"
+set_env LIBRARY_PATH "\$HOME/.heroku/vendor/lib:\$HOME/.heroku/python/lib:/app/.root/usr/lib:\$LIBRARY_PATH"
 set_env LD_LIBRARY_PATH "\$HOME/.heroku/vendor/lib:\$HOME/.heroku/python/lib:\$LD_LIBRARY_PATH"
 # Locale.
 set_default_env LANG en_US.UTF-8
